@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3sqjefu0f3ln"]
+
+[ext_resource type="Script" path="res://scripts/incrementer.gd" id="1_anhag"]
+[ext_resource type="Texture2D" uid="uid://vna4dykd557e" path="res://Sprites/icon.svg" id="2_7h3mq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlw8x"]
+size = Vector2(138, 138)
+
+[node name="Incrementer" type="Area2D"]
+script = ExtResource("1_anhag")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7h3mq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_hlw8x")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

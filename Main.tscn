@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpmhx3ycf70cc"]
+
+[ext_resource type="PackedScene" uid="uid://b3sqjefu0f3ln" path="res://Instances/incrementer.tscn" id="1_5dvbb"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Incrementer" parent="." instance=ExtResource("1_5dvbb")]
+position = Vector2(557, 219)
