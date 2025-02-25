@@ -1,8 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpmhx3ycf70cc"]
+[gd_scene load_steps=5 format=3 uid="uid://cpmhx3ycf70cc"]
 
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_1wabf"]
 [ext_resource type="PackedScene" uid="uid://b3sqjefu0f3ln" path="res://Instances/incrementer.tscn" id="1_5dvbb"]
+[ext_resource type="PackedScene" uid="uid://cr6v6ie2ndwhu" path="res://Instances/boss.tscn" id="2_l0obj"]
+[ext_resource type="PackedScene" uid="uid://bn8qnhyijkhb1" path="res://Instances/hud.tscn" id="3_r78w4"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_1wabf")
+bossy = ExtResource("2_l0obj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -27.0
+offset_top = -25.0
+offset_right = 1182.0
+offset_bottom = 665.0
+color = Color(0.00288962, 0.00291356, 0.131866, 1)
 
 [node name="Incrementer" parent="." instance=ExtResource("1_5dvbb")]
-position = Vector2(557, 219)
+position = Vector2(563, 355)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="HUD" parent="." instance=ExtResource("3_r78w4")]
+
+[connection signal="input_event" from="Incrementer" to="." method="_on_incrementer_input_event"]
+[connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
