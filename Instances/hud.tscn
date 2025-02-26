@@ -12,11 +12,13 @@ anchor_bottom = 1.0
 offset_top = -23.0
 offset_right = 40.0
 grow_vertical = 0
-text = "00"
+text = "Incrementer"
 
-[node name="Message" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 4096.0
+[node name="Boss_Deadline" type="Label" parent="."]
+offset_left = 1061.0
+offset_top = 4.0
+offset_right = 1147.0
+offset_bottom = 27.0
+text = "Boss Timer
+"
+horizontal_alignment = 2

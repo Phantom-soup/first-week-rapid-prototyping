@@ -1,15 +1,16 @@
 extends CanvasLayer
 
-
 signal start_game
-signal boss_time
 
 
 func _ready() -> void:
 	$Counter.hide()
+	$Boss_Deadline.hide()
 
 
 func try_again():
+	$Counter.hide()
+	$Counter.text = str("0")
 	print("kill bind!")
 
 
@@ -17,8 +18,5 @@ func update_increment(num):
 	$Counter.text = str(num)
 	start_game.emit()
 
-
-
-
-func _on_boss_timer_timeout() -> void:
-	pass # Replace with function body.
+func update_countdown(num):
+	$Boss_Deadline.text = str(num)

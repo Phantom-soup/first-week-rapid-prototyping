@@ -10,19 +10,23 @@ script = ExtResource("1_1wabf")
 bossy = ExtResource("2_l0obj")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 offset_left = -27.0
 offset_top = -25.0
 offset_right = 1182.0
 offset_bottom = 665.0
+mouse_filter = 2
 color = Color(0.00288962, 0.00291356, 0.131866, 1)
 
 [node name="Incrementer" parent="." instance=ExtResource("1_5dvbb")]
 position = Vector2(563, 355)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Spawn Timer" type="Timer" parent="."]
 
 [node name="HUD" parent="." instance=ExtResource("3_r78w4")]
 
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(1063, 82)
+
 [connection signal="input_event" from="Incrementer" to="." method="_on_incrementer_input_event"]
+[connection signal="timeout" from="Spawn Timer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
